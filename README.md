@@ -1,4 +1,4 @@
-Skin Lesion Image Classifier (educational demo)
+**Skin Lesion Image Classifier (educational demo)**
 
 A small web app that takes a photo of a skin lesion and shows the three most likely lesion types out of nine. Built for a University of Washington course (MSIS 522). It is a learning project, not a medical tool. Do not use it to make health decisions.
 
