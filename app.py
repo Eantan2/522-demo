@@ -27,8 +27,9 @@ def preprocess_image(image):
 # === 4. PREDICTION FUNCTION ===
 def predict_skin_cancer(image):
     image = preprocess_image(image)
-    predictions = model.predict(image)[0]  # Get model predictions
-    result = {class_names[i]: float(predictions[i]) for i in range(len(class_names))}
+    logits = model.predict(image)[0]
+    probs = tf.nn.softmax(logits).numpy()
+    result = {class_names[i]: float(probs[i]) for i in range(len(class_names))}
     return result
 
 # === 5. CREATE GRADIO LIVE DEMO ===
@@ -37,7 +38,7 @@ interface = gr.Interface(
     inputs=gr.Image(type="pil"),
     outputs=gr.Label(num_top_classes=3),
     title="🩺 AI-Powered Skin Cancer Detection",
-    description="Upload an image of a skin lesion and get a classification result."
+    description="Upload an image of a skin lesion and get a classification result. Educational use only; not medical advice."
 )
 
 # === 6. RUN LIVE DEMO ===
