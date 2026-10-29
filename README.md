@@ -42,5 +42,6 @@ Background
 
 This started as a team project in MSIS 522 (University of Washington, 2025). I ran the model training and built the demo app. AI coding assistants were used for parts of the notebook code.
 
-Disclaimer
+Disclaimer:
+
 For educational use only. It is not medical advice and does not replace a dermatologist or any other health professional.
